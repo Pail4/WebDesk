@@ -5,15 +5,15 @@ const defaultStore = {
       name : 'YouTube',
       position : [0, 0],
       design : {
-        displayName : false,
-        // or
-        // name : {
-        //   display : false,
-        //   font : 'Roboto',
-        //   fontColor : '#000000'
-        // },
-        image : 'https://www.youtube.com/img/desktop/yt_1200.png',
-        displayImage : true,
+        name : {
+          display : false,
+          fontColor : '#000000'
+        },
+        background : {
+          display : true,
+          image : 'https://www.youtube.com/img/desktop/yt_1200.png',
+          color : '#000000'
+        }
       }
     }
   ]

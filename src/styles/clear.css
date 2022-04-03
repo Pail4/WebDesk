@@ -102,6 +102,11 @@ textarea {
     margin: 0;
 }
 
+button {
+    border: none;
+    background: transparent;
+}
+
 button,
 input {
     overflow: visible;

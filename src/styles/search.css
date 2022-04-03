@@ -7,9 +7,10 @@
     border: 1px solid #5f6368;
     box-shadow: none;
     border-radius: 24px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     width: auto;
     max-width: 600px;
+    tab-index: 100;
 }
 
 .search-bar:hover, .search-bar:focus {
@@ -23,6 +24,7 @@
 .search-company img {
     width: 35px;
     height: 35px;
+    object-fit: contain;
 }
 
 .search-input {

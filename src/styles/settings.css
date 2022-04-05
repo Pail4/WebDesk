@@ -1,0 +1,16 @@
+.settings-icon {
+    display: block;
+    max-width: 55px;
+    max-height: 55px;
+    position: absolute;
+    top: 60px;
+    right: 70px;
+    transition: all .4s ease-in-out;
+}
+
+.settings-icon:hover {
+    cursor: pointer;
+}
+.settings-icon:hover, .settings-icon:focus {
+    transform: rotate(30deg);
+}

@@ -29,7 +29,7 @@ const Block = (props) => {
     };
     return (
         <div className="label-block" style={styles}>
-            <p>{name.repeat(design.name.displayName)}</p>
+            <a href="">{name.repeat(design.name.displayName)}</a>
         </div>
     );
 };

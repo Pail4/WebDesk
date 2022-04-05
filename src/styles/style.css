@@ -1,7 +1,10 @@
 @charset "UTF-8";
 @import url(./clear.css);
 @import url(./search.css);
+@import url(./app.css);
+@import url(./blocks.css);
 
-.App {
-    padding: 60px 10px 84px;
+html, body, #root {
+    width: 100%;
+    height: 100%;
 }

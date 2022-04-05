@@ -4,6 +4,7 @@ export const defaultStore = {
             id: 1,
             name: 'YouTube',
             position: ['1', '1'],
+            link: 'https://youtube.com',
             design: {
                 name: {
                     displayName: false,
@@ -20,6 +21,7 @@ export const defaultStore = {
             id: 2,
             name: 'YouTube',
             position: ['2', '1 / 3'],
+            link: 'https://youtube.com',
             design: {
                 name: {
                     displayName: false,
@@ -36,6 +38,7 @@ export const defaultStore = {
             id: 3,
             name: 'YouTube',
             position: ['3 / 5', '1'],
+            link: 'https://youtube.com',
             design: {
                 name: {
                     displayName: true,
@@ -52,6 +55,7 @@ export const defaultStore = {
             id: 4,
             name: 'YouTube',
             position: ['6', '1'],
+            link: 'https://youtube.com',
             design: {
                 name: {
                     displayName: false,

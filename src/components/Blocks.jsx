@@ -20,7 +20,7 @@ export const BlockList = () => {
 };
 
 const Block = (props) => {
-    const { name, position, design } = props.state;
+    const { name, position, link, design } = props.state;
     const { image, displayImage, color } = design.background;
     const styles = {
         background: `center / contain url(${image}) no-repeat `.repeat(displayImage) + color,
@@ -28,8 +28,8 @@ const Block = (props) => {
         gridRow: position[1]
     };
     return (
-        <div className="label-block" style={styles}>
-            <a href="">{name.repeat(design.name.displayName)}</a>
-        </div>
+        <a href={link} target="_blank" className="label-block" style={styles} >
+            <p>{name.repeat(design.name.displayName)}</p>
+        </a>
     );
 };

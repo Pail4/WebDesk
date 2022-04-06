@@ -3,7 +3,12 @@ export const defaultStore = {
         {
             id: 1,
             name: 'YouTube',
-            position: ['1', '1'],
+            coords: {
+                x1: 1,
+                y1: 1,
+                x2: 1,
+                y2: 1
+            },
             link: 'https://youtube.com',
             design: {
                 name: {
@@ -20,7 +25,12 @@ export const defaultStore = {
         {
             id: 2,
             name: 'YouTube',
-            position: ['2', '1 / 3'],
+            coords: {
+                x1: 2,
+                y1: 1,
+                x2: 2,
+                y2: 1
+            },
             link: 'https://youtube.com',
             design: {
                 name: {
@@ -37,7 +47,12 @@ export const defaultStore = {
         {
             id: 3,
             name: 'YouTube',
-            position: ['3 / 5', '1'],
+            coords: {
+                x1: 3,
+                y1: 1,
+                x2: 4,
+                y2: 1
+            },
             link: 'https://youtube.com',
             design: {
                 name: {
@@ -54,7 +69,12 @@ export const defaultStore = {
         {
             id: 4,
             name: 'YouTube',
-            position: ['6', '1'],
+            coords: {
+                x1: 5,
+                y1: 1,
+                x2: 6,
+                y2: 2
+            },
             link: 'https://youtube.com',
             design: {
                 name: {

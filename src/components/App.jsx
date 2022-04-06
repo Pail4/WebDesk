@@ -3,6 +3,7 @@ import { Search } from './Search';
 import { BlockList } from './Blocks';
 import { Header } from './Header';
 import { SettingsIcon } from './Settings';
+import { BlockEditor } from './BlockEditor';
 
 function App() {
     return (
@@ -10,9 +11,10 @@ function App() {
             <SettingsIcon />
             <Search />
             <Header />
-            <BlockList></BlockList>
+            <BlockList/>
+            <BlockEditor />
         </div>
     );
-};
+}
 
 export default App;

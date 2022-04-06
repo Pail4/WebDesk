@@ -4,6 +4,7 @@
 @import url(./settings.css);
 @import url(./search.css);
 @import url(./blocks.css);
+@import url(./block-editor.css);
 
 html, body, #root {
     width: 100%;

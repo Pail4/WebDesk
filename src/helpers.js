@@ -1,11 +1,12 @@
 export function checkResizability(newPosition, blocks) {
-    blocks.forEach(block => {
+    for (const block of blocks) {
         const a = newPosition;
         const b = block.coords;
-        const isOccupied = !(a.y1 < b.y2 || a.y2 > b.y1 || a.x2 < b.x1 || a.x1 > b.x2);
-        if (isOccupied) return false;
-    });
-    return true;
+        const isOccupied = !(a.y1 > b.y2 || a.y2 < b.y1 || a.x2 < b.x1 || a.x1 > b.x2);
+        console.log(isOccupied);
+        // if (isOccupied) return false;
+    }
+    // return true;
 };
 
 export function coordsToGrid(coords) {

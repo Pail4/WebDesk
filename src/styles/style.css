@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@import url("clear.css");
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+}
+
+.App {
+    padding: 50px 45px;
+    width: 100%;
+    height: 100%;
+    background-color: #78B9D6;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.logo {
+    font-family: 'Lobster';
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 120px;
+    color: #2F7CB4;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+}

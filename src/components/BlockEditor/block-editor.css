@@ -88,7 +88,7 @@
 
 .custom-checkbox>input:checked+span::after {
     background-image: url("src/img/checkmark-icon.svg");
-    background-size: 75%;
+    background-size: 73%;
 }
 
 .custom-color {
@@ -127,6 +127,7 @@ input[type="color"] {
     right: -37px;
     background-size: 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
 
 }
 
@@ -136,6 +137,7 @@ input[type="color"] {
 
 ::-webkit-color-swatch{
     border: 0;
+    border-radius: 20px;
 }
 
 ::-moz-color-swatch,

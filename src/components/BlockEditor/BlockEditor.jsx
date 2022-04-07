@@ -1,9 +1,13 @@
+import './block-editor.css';
+import { EditorCancel } from './EditorCancel';
+import { EditorSave } from './EditorSave';
+
 export const BlockEditor = () => {
     return (
         <div className="editor">
             <div className="editor-actions">
                 <EditorSave/>
-                <EditorCansel/>
+                <EditorCancel/>
             </div>
             <div className="editor-field">
                 <h3 className="editor-field__title">Link</h3>
@@ -25,7 +29,7 @@ export const BlockEditor = () => {
                 <h3 className="editor-field__title">Background</h3>
                 <div className="editor-field__content">
                     <label className="custom-checkbox">
-                        <input type="checkbox" value="1" checked/>
+                        <input type="checkbox" value="1"/>
                         <span>Use site image:</span>
                     </label>
                     <label className="custom-color">
@@ -35,21 +39,5 @@ export const BlockEditor = () => {
                 </div>
             </div>
         </div>
-    );
-};
-
-const EditorSave = () => {
-    return (
-        <button className="editor-save">
-            <img src="src/img/save-block-icon.svg" alt="save"/>
-        </button>
-    );
-};
-
-const EditorCansel = () => {
-    return (
-        <button className="editor-cancel">
-            <img src="src/img/cancel-block-icon.svg" alt="cancel"/>
-        </button>
     );
 };

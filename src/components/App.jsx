@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Search } from './Search';
-import { BlockList } from './Blocks';
-import { Header } from './Header';
-import { SettingsIcon } from './Settings';
-import { BlockEditor } from './BlockEditor';
+import { Search } from './Search/Search';
+import { Settings } from './Settings/Settings';
+import { Header } from './Header/Header';
+import { BlockEditor } from './BlockEditor/BlockEditor';
+import { BlockList } from './Blocks/Blocks';
 
 function App() {
     return (
         <div className="App">
-            <SettingsIcon />
+            <Settings />
             <Search />
             <Header />
             <BlockList/>

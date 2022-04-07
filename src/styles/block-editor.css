@@ -1,0 +1,150 @@
+.editor {
+    background: #3a3a3a;
+    border-radius: 20px;
+    padding: 30px 20px;
+    max-width: 650px;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*visibility: hidden;*/
+}
+
+.editor-save, .editor-cancel {
+    position: absolute;
+    top: 10px;
+}
+
+.editor-save {
+    width: 20px;
+    height: 14px;
+    right: 60px;
+}
+
+.editor-cancel {
+    width: 16px;
+    height: 16px;
+    right: 25px;
+}
+
+.editor-field {
+    background: rgba(196, 196, 196, 0.48);
+    border-radius: 15px;
+    padding: 15px 50px 15px 15px;
+}
+
+.editor-field:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.editor-field__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-field__title {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.editor-field__type {
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    color: #6B6B6B;
+    width: 85%;
+}
+
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.custom-checkbox>span::after {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-left: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #C4C4C4;
+}
+
+.custom-checkbox>input:checked+span::after {
+    background-image: url("src/img/checkmark-icon.svg");
+    background-size: 75%;
+}
+
+.custom-color {
+    display: flex;
+    align-items: center;
+}
+
+.custom-color span {
+    margin-right: 8px;
+    display: flex;
+    position: relative;
+}
+
+input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 30px;
+    padding: 0;
+    width: 40px;
+}
+
+.custom-color span:after {
+    position: absolute;
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-image: url("src/img/brush-icon.svg");
+    width: 18px;
+    height: 18px;
+    top: 0;
+    right: -37px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+::-webkit-color-swatch{
+    border: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner{
+    border: 0;
+    border-radius: 20px;
+}
+
+::-moz-focus-inner{
+    padding: 0;
+}
+

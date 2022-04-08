@@ -31,7 +31,7 @@
 .editor-field {
     background: rgba(196, 196, 196, 0.48);
     border-radius: 15px;
-    padding: 15px 50px 15px 15px;
+    padding: 15px;
 }
 
 .editor-field:not(:last-child) {
@@ -41,6 +41,11 @@
 .editor-field__content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.editor-field__content:last-child {
+    margin-bottom: 0px;
 }
 
 .editor-field__title {
@@ -55,7 +60,11 @@
     background: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
     color: #6B6B6B;
-    width: 85%;
+    width: 80%;
+}
+
+.custom-checkbox {
+    display: inline;
 }
 
 .custom-checkbox>input {

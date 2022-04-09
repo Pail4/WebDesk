@@ -14,3 +14,7 @@
 .settings-icon:hover, .settings-icon:focus {
     transform: rotate(30deg);
 }
+
+.settings-active svg path {
+    fill: #00487C;
+}

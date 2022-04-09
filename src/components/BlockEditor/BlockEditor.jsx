@@ -1,8 +1,13 @@
 import './block-editor.css';
 import { EditorCancel } from './EditorCancel';
 import { EditorSave } from './EditorSave';
+import { useSelector } from 'react-redux';
 
 export const BlockEditor = () => {
+    const { modalVisible } = useSelector(state => state);
+
+    if (!modalVisible) return null;
+
     return (
         <div className="editor">
             <div className="editor-actions">

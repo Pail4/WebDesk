@@ -1,6 +1,13 @@
+import { useDispatch } from 'react-redux';
+import { changeModalVisible } from '../../store/actions';
+
 export const EditorCancel = () => {
+    const dispatch = useDispatch();
     return (
-        <button className="editor-cancel">
+        <button className="editor-cancel"
+            onClick={() => {
+                dispatch(changeModalVisible(false));
+            }}>
             <img src="src/img/cancel-block-icon.svg" alt="cancel"/>
         </button>
     );

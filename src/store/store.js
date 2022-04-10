@@ -1,6 +1,3 @@
-import { combineReducers } from 'redux';
-import { modalVisible, settingsMode } from './reducers';
-
 export const defaultStore = {
     blocks: [
         {
@@ -95,5 +92,3 @@ export const defaultStore = {
     modalVisible: false,
     settingsMode: false
 };
-
-export const mainStore = combineReducers({ modalVisible, settingsMode });

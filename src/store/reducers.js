@@ -22,4 +22,9 @@ export const settingsMode = (state = defaultStore.settingsMode, action) => {
     }
 };
 
+export const reducers = combineReducers({
+    modalVisible,
+    settingsMode
+})
+
 /* eslint-enable */

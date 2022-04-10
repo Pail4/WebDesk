@@ -5,9 +5,10 @@ import App from './components/App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { devToolsEnhancer } from '@redux-devtools/extension';
-import { mainStore } from './store/reducers';
 
-export const store = createStore(mainStore, devToolsEnhancer());
+import { reducers } from './store/reducers';
+
+export const store = createStore(reducers, devToolsEnhancer());
 
 ReactDOM.render(
     <React.StrictMode>

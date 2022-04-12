@@ -5,7 +5,7 @@
     max-width: 650px;
     position: absolute;
     width: 100%;
-    top: 50px;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 150;

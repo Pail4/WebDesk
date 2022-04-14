@@ -9,8 +9,6 @@
     margin: 0 7px 14px 7px;
     border-radius: 25px;
     position: relative;
-    font: inherit;
-    color: black;
 }
 
 .label-block a {
@@ -19,7 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: inherit;
+    color: black;
+    font: inherit;
 }
 
 .edit-block{

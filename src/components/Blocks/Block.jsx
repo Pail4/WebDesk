@@ -1,9 +1,15 @@
-import { coordsToGrid } from '../../helpers';
+import { coordsToGrid, resize, resizeStop, setResizeCursor } from '../../blocks';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeModalVisible } from '../../store/actions';
+import { changeBlock, changeModalVisible } from '../../store/actions';
 
 export const Block = (props) => {
-    const { name, coords, link, design } = props.state;
+    const blocks = useSelector(state => state.blocks);
+    const settingsMode = useSelector(state => state.settingsMode);
+    const dispatcher = useDispatch();
+    const [isMouseDown, setIsMouseDown] = useState(false);
+
+    const { id, name, coords, link, design } = props.state;
     const { image, displayImage, color } = design.background;
 
     const { gridColumn, gridRow } = coordsToGrid(coords);
@@ -13,19 +19,51 @@ export const Block = (props) => {
         gridRow
     };
 
+    function mouseMoveListener(event) {
+        if (!settingsMode) return;
+        setResizeCursor(event);
+        if (isMouseDown) {
+            document.body.onselectstart = function() { return false; };
+            const filtredBlocks = blocks.filter((item) => item.id !== id);
+            const newPosition = resize(event, coords, filtredBlocks);
+            if (newPosition) {
+                const newBlock = Object.assign({}, props.state);
+                newBlock.coords = newPosition;
+                dispatcher(changeBlock(newBlock));
+            }
+            mouseUpListener(event);
+        }
+    }
+
+    function mouseDownListener(event) {
+        event.preventDefault();
+        setIsMouseDown(true);
+    }
+
+    function mouseUpListener(event) {
+        if (isMouseDown) {
+            resizeStop(event);
+            setIsMouseDown(false);
+        }
+    }
+
     return name === ''
         ? <AddBlock style={styles}/>
-        : <div className="label-block" style={styles} >
-            <EditButton />
-            <a href={link} target="_blank" >
+        <div className="label-block"
+            style={styles}
+            onMouseMove={mouseMoveListener}
+            onMouseDown={mouseDownListener}
+            onMouseUp={mouseUpListener}>
+              <EditButton />
+              <a href={link} target="_blank">
                 <p>{name.repeat(design.name.displayName)}</p>
-            </a>
-        </div>;
+              </a>
+          </div>;
 };
 
 const EditButton = () => {
     const dispatch = useDispatch();
-    const { settingsMode } = useSelector(state => state);
+    const settingsMode = useSelector(state => state.settingsMode);
     if (!settingsMode) return null;
     return (
         <button className="edit-block"

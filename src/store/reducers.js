@@ -1,8 +1,24 @@
 import { combineReducers } from 'redux';
 import { defaultStore } from './store';
-import { MODAL_VISIBLE, SETTINGS_MODE } from './actions';
+import { BLOCK, MODAL_VISIBLE, SETTINGS_MODE } from './actions';
 
 /*eslint-disable */
+
+export const blocks = (state = defaultStore.blocks, action) => {
+    switch (action.type) {
+        case BLOCK: {
+                const newBlock = action.block;
+                const newBlocks = state.slice();
+                newBlocks.filter((block) => {
+                    if (block.id === newBlock.id) return newBlock;
+                    return block;
+                })
+                return newBlocks;
+            }
+        default:
+            return state
+    }
+}
 
 export const modalVisible = (state = defaultStore.modalVisible, action) => {
     switch (action.type) {
@@ -23,6 +39,7 @@ export const settingsMode = (state = defaultStore.settingsMode, action) => {
 };
 
 export const reducers = combineReducers({
+    blocks,
     modalVisible,
     settingsMode
 })

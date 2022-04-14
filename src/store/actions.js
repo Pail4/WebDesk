@@ -1,5 +1,13 @@
 export const MODAL_VISIBLE = 'MODAL_VISIBLE';
 export const SETTINGS_MODE = 'SETTINGS_MODE';
+export const BLOCK = 'BLOCK_POSITION';
+
+export const changeBlock = (block) => {
+    return {
+        type: BLOCK,
+        block: block
+    };
+};
 
 export const changeModalVisible = (isModalVisible) => {
     return {

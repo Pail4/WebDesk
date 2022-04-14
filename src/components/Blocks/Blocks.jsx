@@ -17,6 +17,18 @@ export const BlockList = () => {
             <Block
                 state = {defaultStore.blocks[3]}
             />
+            <Block
+                state = {defaultStore.blocks[4]}
+            />
+            <Block
+                state = {defaultStore.blocks[5]}
+            />
+            <Block
+                state = {defaultStore.blocks[6]}
+            />
+            <Block
+                state = {defaultStore.blocks[7]}
+            />
         </div>
     );
 };

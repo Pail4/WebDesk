@@ -87,6 +87,94 @@ export const defaultStore = {
                     color: '#fff'
                 }
             }
+        },
+        {
+            id: 5,
+            name: '',
+            coords: {
+                x1: 1,
+                y1: 2,
+                x2: 1,
+                y2: 2
+            },
+            link: '',
+            design: {
+                name: {
+                    displayName: false,
+                    fontColor: '#000000'
+                },
+                background: {
+                    displayImage: true,
+                    image: '../src/img/add-block.svg',
+                    color: '#3A5967'
+                }
+            }
+        },
+        {
+            id: 6,
+            name: '',
+            coords: {
+                x1: 2,
+                y1: 2,
+                x2: 2,
+                y2: 2
+            },
+            link: '',
+            design: {
+                name: {
+                    displayName: false,
+                    fontColor: '#000000'
+                },
+                background: {
+                    displayImage: true,
+                    image: '../src/img/add-block.svg',
+                    color: '#3A5967'
+                }
+            }
+        },
+        {
+            id: 7,
+            name: '',
+            coords: {
+                x1: 3,
+                y1: 2,
+                x2: 3,
+                y2: 2
+            },
+            link: '',
+            design: {
+                name: {
+                    displayName: false,
+                    fontColor: '#000000'
+                },
+                background: {
+                    displayImage: true,
+                    image: '../src/img/add-block.svg',
+                    color: '#3A5967'
+                }
+            }
+        },
+        {
+            id: 8,
+            name: '',
+            coords: {
+                x1: 4,
+                y1: 2,
+                x2: 4,
+                y2: 2
+            },
+            link: '',
+            design: {
+                name: {
+                    displayName: false,
+                    fontColor: '#000000'
+                },
+                background: {
+                    displayImage: true,
+                    image: '../src/img/add-block.svg',
+                    color: '#3A5967'
+                }
+            }
         }
     ],
     modalVisible: false,

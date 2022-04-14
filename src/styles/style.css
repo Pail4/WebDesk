@@ -2,6 +2,10 @@
 
 @import url("clear.css");
 
+html {
+    background-color: #78B9D6;
+}
+
 html, body, #root {
     width: 100%;
     height: 100%;
@@ -11,7 +15,6 @@ html, body, #root {
     padding: 50px 45px;
     width: 100%;
     height: 100%;
-    background-color: #78B9D6;
     position: relative;
     color: #FFFFFF;
 }

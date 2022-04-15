@@ -1,5 +1,5 @@
 import { coordsToGrid, resize, resizeStop, setResizeCursor } from '../../blocks';
-import { useState } from 'react';
+import { React, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeBlock, changeModalVisible } from '../../store/actions';
 
@@ -55,7 +55,7 @@ export const Block = (props) => {
             onMouseDown={mouseDownListener}
             onMouseUp={mouseUpListener}>
             <EditButton />
-            <a href={link} target="_blank">
+            <a href={link} target="_blank" rel="noreferrer">
                 <p>{name.repeat(design.name.displayName)}</p>
             </a>
         </div>;

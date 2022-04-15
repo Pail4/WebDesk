@@ -49,16 +49,16 @@ export const Block = (props) => {
 
     return name === ''
         ? <AddBlock style={styles}/>
-        <div className="label-block"
+        : <div className="label-block"
             style={styles}
             onMouseMove={mouseMoveListener}
             onMouseDown={mouseDownListener}
             onMouseUp={mouseUpListener}>
-              <EditButton />
-              <a href={link} target="_blank">
+            <EditButton />
+            <a href={link} target="_blank">
                 <p>{name.repeat(design.name.displayName)}</p>
-              </a>
-          </div>;
+            </a>
+        </div>;
 };
 
 const EditButton = () => {

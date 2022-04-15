@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 import { defaultStore } from './store';
-import { BLOCK, MODAL_VISIBLE, SETTINGS_MODE } from './actions';
+import { CHANGE_BLOCK, MODAL_VISIBLE, SETTINGS_MODE } from './actions';
 
 /*eslint-disable */
 
 export const blocks = (state = defaultStore.blocks, action) => {
     switch (action.type) {
-        case BLOCK: {
-                const newBlock = action.block;
+        case CHANGE_BLOCK: {
+                const newBlock = action.payload;
                 const newBlocks = state.slice();
-                newBlocks.filter((block) => {
+                newBlocks.map((block) => {
                     if (block.id === newBlock.id) return newBlock;
                     return block;
                 })

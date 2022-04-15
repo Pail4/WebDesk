@@ -60,10 +60,11 @@ export const Block = (props) => {
             onMouseUp={mouseUpListener}>
 
             <EditButton onEditBlock={onEditBlock} />
-            <a href={link} target="_blank" rel="noreferrer" onClick={(e) => {if (settingsMode) e.preventDefault();}}>
-                <p>{name.repeat(design.name.displayName)}</p>
+
+            <a href={link} target="_blank" rel="noreferrer" onClick={(e) => { if (settingsMode) e.preventDefault(); }}>
+                <p style={{ color: design.name.fontColor }}>{name.repeat(design.name.displayName)}</p>
             </a>
-        </div>;
+        </div>);
 };
 
 const EditButton = ({ onEditBlock }) => {
@@ -72,6 +73,7 @@ const EditButton = ({ onEditBlock }) => {
     if (!settingsMode) return null;
     return (
         <button className="edit-block"
+            style={{ cursor: 'pointer' }}
             onClick={() => {
                 onEditBlock();
             }}>

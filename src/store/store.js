@@ -182,10 +182,10 @@ export const defaultStore = {
         name: '',
         link: '',
         displayName: false,
-        fontColor: '#000000',
-        displayImage: true,
+        fontColor: '#e4e3e9',
+        displayImage: false,
         image: '../src/img/add-block.svg',
-        background: '#3A5967'
+        background: '#144973'
     },
     modalVisible: false,
     settingsMode: false

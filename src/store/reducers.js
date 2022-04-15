@@ -18,11 +18,10 @@ export const blocks = (state = defaultStore.blocks, action) => {
         case CHANGE_BLOCK: {
                 const newBlock = action.payload;
                 const newBlocks = state.slice();
-                newBlocks.map((block) => {
-                    if (block.id === newBlock.id) return newBlock;
+                return newBlocks.map((block) => {
+                    if (block.id === newBlock.id) return Object.assign({}, block, newBlock);
                     return block;
-                })
-                return newBlocks;
+                });
             }
         default:
             return state;

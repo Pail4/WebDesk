@@ -25,6 +25,6 @@ module.exports = {
             asyncArrow: 'never'
         }],
         indent: ['error', 4],
-        "react/prop-types": [0]
+        'react/prop-types': [0]
     }
 };

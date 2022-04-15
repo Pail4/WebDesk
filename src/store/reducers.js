@@ -16,13 +16,14 @@ export const lastBlock = (state = defaultStore.lastBlock, action) => {
 export const blocks = (state = defaultStore.blocks, action) => {
     switch (action.type) {
         case CHANGE_BLOCK: {
-            const newBlock = action.payload;
-            console.log(newBlock);
-            const newBlocks = state.slice();
-            return newBlocks.map((block) => {
-                if (block.id === newBlock.id) return newBlock;
-                return block;
-            })};
+                const newBlock = action.payload;
+                const newBlocks = state.slice();
+                newBlocks.map((block) => {
+                    if (block.id === newBlock.id) return newBlock;
+                    return block;
+                })
+                return newBlocks;
+            }
         default:
             return state;
     }

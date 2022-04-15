@@ -1,4 +1,5 @@
 import './block-editor.css';
+import { React } from 'react';
 import { EditorCancel } from './EditorCancel';
 import { EditorSave } from './EditorSave';
 import { useDispatch, useSelector } from 'react-redux';

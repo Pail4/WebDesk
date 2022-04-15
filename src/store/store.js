@@ -177,6 +177,16 @@ export const defaultStore = {
             }
         }
     ],
+    lastBlock: {
+        id: 0,
+        name: '',
+        link: '',
+        displayName: false,
+        fontColor: '#000000',
+        displayImage: true,
+        image: '../src/img/add-block.svg',
+        background: '#3A5967'
+    },
     modalVisible: false,
     settingsMode: false
 };

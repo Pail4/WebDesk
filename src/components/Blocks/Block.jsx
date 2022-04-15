@@ -1,12 +1,11 @@
 import { coordsToGrid, resize, resizeStop, setResizeCursor } from '../../blocks';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeBlock, changeModalVisible } from '../../store/actions';
+import { changeBlock, changeLastBlock, changeModalVisible } from '../../store/actions';
 
 export const Block = (props) => {
-    const blocks = useSelector(state => state.blocks);
-    const settingsMode = useSelector(state => state.settingsMode);
-    const dispatcher = useDispatch();
+    const { blocks, settingsMode } = useSelector(state => state);
+    const dispatch = useDispatch();
     const [isMouseDown, setIsMouseDown] = useState(false);
 
     const { id, name, coords, link, design } = props.state;
@@ -29,7 +28,7 @@ export const Block = (props) => {
             if (newPosition) {
                 const newBlock = Object.assign({}, props.state);
                 newBlock.coords = newPosition;
-                dispatcher(changeBlock(newBlock));
+                dispatch(changeBlock(newBlock));
             }
             mouseUpListener(event);
         }
@@ -47,28 +46,33 @@ export const Block = (props) => {
         }
     }
 
+    function onEditBlock() {
+        dispatch(changeModalVisible(true));
+        dispatch(changeLastBlock({ id: id }));
+    }
+
     return name === ''
-        ? <AddBlock style={styles}/>
-        <div className="label-block"
+        ? (<AddBlock style={styles} onEditBlock={onEditBlock} />)
+        : (<div className="label-block"
             style={styles}
             onMouseMove={mouseMoveListener}
             onMouseDown={mouseDownListener}
             onMouseUp={mouseUpListener}>
-              <EditButton />
-              <a href={link} target="_blank">
+            <EditButton onEditBlock={onEditBlock} />
+            <a href={link} target="_blank">
                 <p>{name.repeat(design.name.displayName)}</p>
-              </a>
-          </div>;
+            </a>
+        </div>);
 };
 
-const EditButton = () => {
-    const dispatch = useDispatch();
+const EditButton = ({ onEditBlock }) => {
     const settingsMode = useSelector(state => state.settingsMode);
+
     if (!settingsMode) return null;
     return (
         <button className="edit-block"
             onClick={() => {
-                dispatch(changeModalVisible(true));
+                onEditBlock();
             }}>
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="50" height="50" rx="10" fill="black" fillOpacity="0.68"/>
@@ -78,14 +82,13 @@ const EditButton = () => {
     );
 };
 
-const AddBlock = ({ style }) => {
-    const dispatch = useDispatch();
+const AddBlock = ({ style, onEditBlock }) => {
     const { settingsMode } = useSelector(state => state);
     if (!settingsMode) return null;
     return (
         <button className="add-block" style={style}
             onClick={() => {
-                dispatch(changeModalVisible(true));
+                onEditBlock();
             }}>
         </button>
     );

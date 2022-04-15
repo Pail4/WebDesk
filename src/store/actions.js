@@ -1,11 +1,11 @@
 export const MODAL_VISIBLE = 'MODAL_VISIBLE';
 export const SETTINGS_MODE = 'SETTINGS_MODE';
-export const BLOCK = 'BLOCK_POSITION';
+export const CHANGE_BLOCK = 'CHANGE_BLOCK';
 
 export const changeBlock = (block) => {
     return {
-        type: BLOCK,
-        block: block
+        type: CHANGE_BLOCK,
+        payload: block
     };
 };
 

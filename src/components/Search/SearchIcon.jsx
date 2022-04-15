@@ -1,3 +1,5 @@
+import { React } from 'react';
+
 export const SearchIcon = () => {
     return (
         <button type="submit" className="search-icon">

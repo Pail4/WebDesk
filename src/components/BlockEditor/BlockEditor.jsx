@@ -2,15 +2,21 @@ import './block-editor.css';
 import { React } from 'react';
 import { EditorCancel } from './EditorCancel';
 import { EditorSave } from './EditorSave';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeLastBlock } from '../../store/actions';
 
 export const BlockEditor = () => {
-    const { modalVisible } = useSelector(state => state);
+    const dispatch = useDispatch();
+    const { modalVisible, lastBlock } = useSelector(state => state);
 
     if (!modalVisible) return null;
 
     return (
-        <div className="editor">
+        <form className="editor" action=''
+            onSubmit={(e) => {
+                e.preventDefault();
+                e.target.reset();
+            }}>
             <div className="editor-actions">
                 <EditorSave />
                 <EditorCancel />
@@ -18,44 +24,66 @@ export const BlockEditor = () => {
             <div className="editor-field">
                 <h3 className="editor-field__title">Link</h3>
                 <div className="editor-field__content">
-                    <input type="text" className="editor-field__type" placeholder="write link to the site here" />
+                    <input type="text" className="editor-field__type" placeholder="write link to the site here"
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ link: e.target.value }));
+                        }} />
                 </div>
             </div>
             <div className="editor-field">
                 <h3 className="editor-field__title">Name</h3>
                 <div className="editor-field__content">
-                    <CustomCheckbox text="show name:" />
+                    <CustomCheckbox text="show name:"
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ displayName: true }));
+                        }} />
                 </div>
                 <div className="editor-field__content">
-                    <input type="text" className="editor-field__type" placeholder="write site name here" />
-                    <FieldColor />
+                    <input type="text" className="editor-field__type" placeholder="write site name here"
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ name: e.target.value }));
+                        }} />
+                    <FieldColor
+                        value={lastBlock.fontColor}
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ fontColor: e.target.value }));
+                        }} />
                 </div>
             </div>
             <div className="editor-field">
                 <h3 className="editor-field__title">Background</h3>
                 <div className="editor-field__content">
-                    <CustomCheckbox text="show site image:" />
-                    <FieldColor />
+                    <CustomCheckbox
+                        text="show site image:"
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ displayImage: true }));
+                        }} />
+                    <FieldColor
+                        value={lastBlock.background}
+                        onChange={(e) => {
+                            dispatch(changeLastBlock({ background: e.target.value }));
+                        }} />
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
 
-const FieldColor = () => {
+const FieldColor = ({ value, onChange }) => {
     return (
         <label className="custom-color">
             <span>Color:</span>
-            <input type="color" className="editor-field__color" value="#C4C4C4" />
+            <input type="color" className="editor-field__color" value={value}
+                onChange={onChange} />
         </label>
     );
 };
 
-const CustomCheckbox = (props) => {
+const CustomCheckbox = ({ text, onChange }) => {
     return (
         <label className="custom-checkbox">
-            <input type="checkbox" value="1" />
-            <span>{props.text}</span>
+            <input type="checkbox" value="1" onChange={onChange}/>
+            <span>{text}</span>
         </label>
     );
 };

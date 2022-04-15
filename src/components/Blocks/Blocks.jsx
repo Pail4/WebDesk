@@ -2,7 +2,6 @@ import './blocks.css';
 
 import { Block } from './Block';
 import { useSelector } from 'react-redux';
-import React from 'react';
 
 export const BlockList = () => {
     const blocks = useSelector(state => state.blocks);

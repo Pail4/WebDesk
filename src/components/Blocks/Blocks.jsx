@@ -1,34 +1,23 @@
 import './blocks.css';
-import { defaultStore } from '../../store/store';
+
 import { Block } from './Block';
+import { useSelector } from 'react-redux';
+import React from 'react';
 
 export const BlockList = () => {
+    const blocks = useSelector(state => state.blocks);
+    function createBlockList(blocks) {
+        if (!blocks) return null;
+        return blocks.map((block) => {
+            return (
+                <Block state={block} key={block.id} />
+            );
+        });
+    };
+
     return (
         <div className='blocks'>
-            <Block
-                state = {defaultStore.blocks[0]}
-            />
-            <Block
-                state = {defaultStore.blocks[1]}
-            />
-            <Block
-                state = {defaultStore.blocks[2]}
-            />
-            <Block
-                state = {defaultStore.blocks[3]}
-            />
-            <Block
-                state = {defaultStore.blocks[4]}
-            />
-            <Block
-                state = {defaultStore.blocks[5]}
-            />
-            <Block
-                state = {defaultStore.blocks[6]}
-            />
-            <Block
-                state = {defaultStore.blocks[7]}
-            />
+            {createBlockList(blocks)}
         </div>
     );
 };

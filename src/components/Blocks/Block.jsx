@@ -55,7 +55,7 @@ export const Block = (props) => {
             onMouseDown={mouseDownListener}
             onMouseUp={mouseUpListener}>
             <EditButton />
-            <a href={link} target="_blank" rel="noreferrer">
+            <a href={link} target="_blank" rel="noreferrer" onClick={(e) => {if (settingsMode) e.preventDefault();}}>
                 <p>{name.repeat(design.name.displayName)}</p>
             </a>
         </div>;

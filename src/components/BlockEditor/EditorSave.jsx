@@ -1,15 +1,17 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeBlock, changeModalVisible } from '../../store/actions';
 
 export const EditorSave = () => {
     const dispatch = useDispatch();
-    const { name, link, displayName, fontColor, displayImage, image, background } = useSelector(state => state.lastBlock);
+    const { id, name, link, displayName, fontColor, displayImage, image, background } = useSelector(state => state.lastBlock);
 
     return (
         <button type='submit' className="editor-save"
             onClick={() => {
                 dispatch(changeModalVisible(false));
                 dispatch(changeBlock({
+                    id: id,
                     name: name,
                     link: link,
                     design: {

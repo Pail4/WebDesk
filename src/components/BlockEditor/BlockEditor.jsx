@@ -3,7 +3,7 @@ import { React } from 'react';
 import { EditorCancel } from './EditorCancel';
 import { EditorSave } from './EditorSave';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeLastBlock } from '../../store/actions';
+import { changeLastBlock } from '../../store/slice';
 
 export const BlockEditor = () => {
     const dispatch = useDispatch();

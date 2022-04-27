@@ -1,10 +1,10 @@
 import { React } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { settingsModeHandler } from '../../store/actions';
+import { settingsModeHandler } from '../../store/slice';
 
 export const SettingsIcon = () => {
     const dispatch = useDispatch();
-    const { settingsMode } = useSelector(state => state);
+    const settingsMode = useSelector(state => state.settingsMode);
     return (
         <button type="button" className={`settings-icon ${settingsMode ? 'settings-active' : ''}`}
             onClick={() => {

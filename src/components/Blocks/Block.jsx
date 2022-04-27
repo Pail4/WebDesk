@@ -1,7 +1,7 @@
 import { coordsToGrid, resize, resizeStop, setResizeCursor } from '../../blocks';
 import { React, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeBlock, changeLastBlock, changeModalVisible } from '../../store/actions';
+import { changeBlock, changeLastBlock, changeModalVisible } from '../../store/slice';
 
 export const Block = (props) => {
     const { blocks, settingsMode } = useSelector(state => state);

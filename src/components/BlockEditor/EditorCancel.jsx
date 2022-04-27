@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeModalVisible } from '../../store/actions';
+import { changeModalVisible } from '../../store/slice';
 
 export const EditorCancel = () => {
     const dispatch = useDispatch();

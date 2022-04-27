@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeBlock, changeModalVisible } from '../../store/actions';
+import { changeBlock, changeModalVisible } from '../../store/slice';
 
 export const EditorSave = () => {
     const dispatch = useDispatch();
